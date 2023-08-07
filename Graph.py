@@ -1,26 +1,37 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-# Step 1: Create an empty weighted graph
-G = nx.Graph()
+class graph:
 
-# Step 2: Add nodes to the graph
-G.add_nodes_from(['Node1', 'Node2', 'Node3', 'Node4'])
+    def __init__(self):
+        self.graph = nx.Graph()
 
-# Step 3: Add weighted edges to the graph
-edges = [('Node1', 'Node2', 5), ('Node2', 'Node3', 3), ('Node3', 'Node4', 7), ('Node4', 'Node1', 2)]
-G.add_weighted_edges_from(edges)
+    def add_node(self, node):
+        self.graph.add_node(node)
 
-# Step 4: Accessing the weights of edges
-weight_1_2 = G['Node1']['Node2']['weight']
-weight_2_3 = G['Node2']['Node3']['weight']
-weight_3_4 = G['Node3']['Node4']['weight']
-weight_4_1 = G['Node4']['Node1']['weight']
+    def add_edge(self, node1, node2, weight):
+        self.graph.add_edge(node1, node2, weight=weight)
 
-# Step 5: Visualizing the graph
-pos = nx.spring_layout(G)  # Positions for all nodes
-nx.draw(G, pos, with_labels=True, node_size=1000, node_color='skyblue', font_size=10, font_weight='bold')
-labels = nx.get_edge_attributes(G, 'weight')
-nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
+    def plot_graph(self):
+        pos = nx.spring_layout(self.graph)  # Positions for all nodes
+        nx.draw(self.graph, pos, with_labels=True, node_size=1000, node_color='skyblue', font_size=10, font_weight='bold')
+        labels = nx.get_edge_attributes(self.graph, 'weight')
+        nx.draw_networkx_edge_labels(self.graph, pos, edge_labels=labels)
+        plt.show()
 
-plt.show()
+"""
+# Example usage
+my_graph = graph()
+
+my_graph.add_node('A')
+my_graph.add_node('B')
+my_graph.add_node('C')
+my_graph.add_node('D')
+
+my_graph.add_edge('A', 'B', weight=5)
+my_graph.add_edge('B', 'C', weight=3)
+my_graph.add_edge('C', 'D', weight=7)
+my_graph.add_edge('D', 'A', weight=2)
+
+my_graph.plot_graph()
+"""

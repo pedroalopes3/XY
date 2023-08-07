@@ -26,7 +26,7 @@ def dequeue(priority_queue):
 
 
 # Function to update the integers in an element based on the string component
-def update_element_by_string(old_string, new_second_int,priority_queue):
+def update_element_by_string(old_string, new_second_int, priority_queue):
     # Find the old element based on the string
     for i, element in enumerate(priority_queue):
         if element[2] == old_string:
@@ -51,6 +51,7 @@ def update_element_by_string(old_string, new_second_int,priority_queue):
 def add_element(new_element,elements):
     elements.append(new_element)
 
+"""
 # Example usage:
 for element in elements:
     enqueue(element)
@@ -58,6 +59,7 @@ for element in elements:
 while priority_queue:
     element = dequeue()
     print(element)
+"""
 
 # create a elements list
 def init_list_elements():

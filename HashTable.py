@@ -26,7 +26,7 @@ def is_string_in_hash_table(s, hash_table):
         return True
     return False
 
-
+"""
 # Example usage:
 insert_string("apple")
 insert_string("banana")
@@ -38,3 +38,4 @@ print(is_string_in_hash_table("banana"))  # Output: True
 print(is_string_in_hash_table("orange"))  # Output: False
 print(is_string_in_hash_table("ZEBRA"))  # Output: True
 print(is_string_in_hash_table("watermelon"))  # Output: False
+"""
