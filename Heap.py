@@ -24,6 +24,33 @@ def dequeue(priority_queue):
         raise IndexError("Priority queue is empty.")
     return heapq.heappop(priority_queue)[1]
 
+
+# Function to update the integers in an element based on the string component
+def update_element_by_string(old_string, new_second_int,priority_queue):
+    # Find the old element based on the string
+    for i, element in enumerate(priority_queue):
+        if element[2] == old_string:
+            break
+    else:
+        raise ValueError(f"Element with string '{old_string}' not found in the priority queue.")
+
+    # Remove the old element
+    old_element = priority_queue.pop(i)
+
+    # Update the integers in the element
+    if new_second_int < old_element[1]:
+        updated_element = (old_element[0] + 1, new_second_int, old_element[2])
+    else:
+        updated_element = (old_element[0] + 1, old_element[1], old_element[2])
+
+    # Add the updated element back to the priority queue
+    enqueue(updated_element)
+
+
+# Function to add elements to the priority queue
+def add_element(new_element,elements):
+    elements.append(new_element)
+
 # Example usage:
 for element in elements:
     enqueue(element)
@@ -32,10 +59,10 @@ while priority_queue:
     element = dequeue()
     print(element)
 
+# create a elements list
 def init_list_elements():
     elements = []
     return elements
 
-def insert in queue
 
 
