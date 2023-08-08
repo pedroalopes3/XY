@@ -29,7 +29,10 @@ def dequeue(priority_queue):
 def update_element_by_string(old_string, new_second_int, priority_queue):
     # Find the old element based on the string
     i = 0
+
     for element in priority_queue:
+        print("\n")
+        print(element)
         if element[2] == old_string:
             break
         i = i + 1
@@ -50,8 +53,9 @@ def update_element_by_string(old_string, new_second_int, priority_queue):
 
 
 # Function to add elements to the priority queue
-def add_element(new_element,elements):
+def add_element(new_element, elements):
     elements.append(new_element)
+    print(new_element)
 
 """
 # Example usage:
