@@ -1,7 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-class graph:
+class WeightedGraph:
 
     def __init__(self):
         self.graph = nx.Graph()
@@ -13,8 +13,9 @@ class graph:
         self.graph.add_edge(node1, node2, weight=weight)
 
     def plot_graph(self):
-        pos = nx.spring_layout(self.graph)  # Positions for all nodes
-        nx.draw(self.graph, pos, with_labels=True, node_size=1000, node_color='skyblue', font_size=10, font_weight='bold')
+        pos = nx.spring_layout(self.graph)
+        nx.draw(self.graph, pos, with_labels=True, node_size=100, node_color='skyblue', font_size=10,
+                font_weight='bold')
         labels = nx.get_edge_attributes(self.graph, 'weight')
         nx.draw_networkx_edge_labels(self.graph, pos, edge_labels=labels)
         plt.show()

@@ -16,13 +16,13 @@ def init_queue():
 
 # Function to add elements to the priority queue
 def enqueue(item,priority_queue):
-    heapq.heappush(priority_queue, (custom_priority(item), item))
+    heapq.heappush(priority_queue, item)
 
 # Function to remove and return the most priority element from the priority queue
 def dequeue(priority_queue):
     if not priority_queue:
         raise IndexError("Priority queue is empty.")
-    return heapq.heappop(priority_queue)[1]
+    return heapq.heappop(priority_queue)
 
 
 # Function to update the integers in an element based on the string component
@@ -31,8 +31,10 @@ def update_element_by_string(old_string, new_second_int, priority_queue):
     i = 0
 
     for element in priority_queue:
+        """ 
         print("\n")
         print(element)
+        """
         if element[2] == old_string:
             break
         i = i + 1
@@ -49,13 +51,13 @@ def update_element_by_string(old_string, new_second_int, priority_queue):
         updated_element = (old_element[0] + 1, old_element[1], old_element[2])
 
     # Add the updated element back to the priority queue
-    enqueue(updated_element)
+    enqueue(updated_element, priority_queue)
 
 
 # Function to add elements to the priority queue
 def add_element(new_element, elements):
     elements.append(new_element)
-    print(new_element)
+
 
 """
 # Example usage:

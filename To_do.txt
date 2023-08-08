@@ -1,1 +1,0 @@
-.Fazer Hash table para link ja vistos
