@@ -28,9 +28,11 @@ def dequeue(priority_queue):
 # Function to update the integers in an element based on the string component
 def update_element_by_string(old_string, new_second_int, priority_queue):
     # Find the old element based on the string
-    for i, element in enumerate(priority_queue):
+    i = 0
+    for element in priority_queue:
         if element[2] == old_string:
             break
+        i = i + 1
     else:
         raise ValueError(f"Element with string '{old_string}' not found in the priority queue.")
 

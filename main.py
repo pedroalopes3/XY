@@ -1,7 +1,7 @@
 
 from Webpage import copy_text, find_links, unique_links
 from Heap import init_list_elements, init_queue, update_element_by_string, add_element, enqueue, dequeue
-from HashTable import init_hash_table, is_string_in_hash_table, insert_string
+from HashTable import init_hash_table, is_string_in_hash_table, insert_string, remove_string
 from Graph import graph
 
 
@@ -41,6 +41,7 @@ text = copy_text(url)
 
 while url:
 
+    print(Current_subject)
 
     # encontra link na pagina
     links = find_links(url)
@@ -55,6 +56,8 @@ while url:
     next_subject = dequeue(Heap)
 
     Current_subject = next_subject[2]
+
+    remove_string(Current_subject, hash_table)
 
     url = prefix + Current_subject
 
